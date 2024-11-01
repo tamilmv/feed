@@ -1,8 +1,29 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="/_autoindex/assets/css/autoindex.css" /><script src="/_autoindex/assets/js/tablesort.js"></script><script src="/_autoindex/assets/js/tablesort.number.js"></script><title>Index of /</title><style>@media (prefers-color-scheme:dark){body{background-color:#000!important}}</style></head><body><div class="content"><h1 style="color: #555;">Index of /</h1>
+<div id="table-filter"><input type="text" name="keyword" id="filter-keyword" placeholder="Filter Name"></div>
 <div id="table-list"><table id="table-content"><thead class="t-header"><tr><th class="colname" aria-sort="ascending"><a class="name" href="?ND"  onclick="return false"">Name</a></th><th class="colname" data-sort-method="number"><a href="?MA"  onclick="return false"">Last Modified</a></th><th class="colname" data-sort-method="number"><a href="?SA"  onclick="return false"">Size</a></th></tr></thead>
-<tr><td data-sort="*vendor"><a href="/vendor/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">vendor</a></td><td data-sort="153628358">2024-11-01 02:32</td><td data-sort="-1">-</td></tr>
-<tr><td data-sort="app.php"><a href="/app.php"><img class="icon" src="/_autoindex/assets/icons/file-text.svg" alt="[TXT]">app.php</a></td><td data-sort="1730395887">2024-10-31 17:31</td><td data-sort="1782">      2k</td></tr>
-<tr><td data-sort="composer.json"><a href="/composer.json"><img class="icon" src="/_autoindex/assets/icons/file.svg" alt="File">composer.json</a></td><td data-sort="1730428360">2024-11-01 02:32</td><td data-sort="142">      1k</td></tr>
-<tr><td data-sort="composer.lock"><a href="/composer.lock"><img class="icon" src="/_autoindex/assets/icons/file.svg" alt="File">composer.lock</a></td><td data-sort="1730428356">2024-11-01 02:32</td><td data-sort="34226">     34k</td></tr>
+<tr><td data-sort="*edge-tts-text-to-speech"><a href="/Edge-TTS-Text-to-Speech/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">Edge-TTS-Text-to-Speech</a></td><td data-sort="153639178">2024-11-01 05:32</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*public"><a href="/public/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">public</a></td><td data-sort="153639232">2024-11-01 05:33</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*tmp"><a href="/tmp/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">tmp</a></td><td data-sort="153639232">2024-11-01 05:33</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="app"><a href="/app"><img class="icon" src="/_autoindex/assets/icons/file.svg" alt="File">app</a></td><td data-sort="1730439232">2024-11-01 05:33</td><td data-sort="329">      1k</td></tr>
+<tr><td data-sort="app.py"><a href="/app.py"><img class="icon" src="/_autoindex/assets/icons/file.svg" alt="File">app.py</a></td><td data-sort="1730439168">2024-11-01 05:32</td><td data-sort="3076">      4k</td></tr>
+<tr><td data-sort="passenger_wsgi.py"><a href="/passenger_wsgi.py"><img class="icon" src="/_autoindex/assets/icons/file.svg" alt="File">passenger_wsgi.py</a></td><td data-sort="1730439232">2024-11-01 05:33</td><td data-sort="142">      1k</td></tr>
+<tr><td data-sort="requirements.txt"><a href="/requirements.txt"><img class="icon" src="/_autoindex/assets/icons/file-text.svg" alt="[TXT]">requirements.txt</a></td><td data-sort="1730439273">2024-11-01 05:34</td><td data-sort="18">      1k</td></tr>
 </table></div>
-<address>Proudly Served by LiteSpeed Web Server at test1.proxyboy.site Port 443</address></div><script>new Tablesort(document.getElementById("table-content"));</script></body></html>
+<address>Proudly Served by LiteSpeed Web Server at test1.proxyboy.site Port 443</address></div><script>
+	new Tablesort(document.getElementById("table-content"));
+	var keywordInput = document.getElementById('filter-keyword');
+	document.addEventListener('keyup', filterTable);
+
+	function filterTable(e) {
+		if (e.target.id != 'filter-keyword') return;
+
+		var cols = document.querySelectorAll('tbody td:first-child');
+		var keyword = keywordInput.value.toLowerCase();
+		for (i = 0; i < cols.length; i++) {
+			var text = cols[i].textContent.toLowerCase();
+			if (text != 'parent directory') {
+				cols[i].parentNode.style.display = text.indexOf(keyword) === -1 ? 'none' : 'table-row';
+			}
+		}
+	}
+</script></body></html>
